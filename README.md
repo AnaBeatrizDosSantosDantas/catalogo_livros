@@ -24,23 +24,22 @@ Certifique-se de ter o Node.js e o MongoDB instalados em seu dispositivo.
     npm i
     ```
 
-3. **Instale as dependências do front-end:**
+3. **Inicie a API:**
+
+    ```
+    node ./mongo_database.js
+    ```
+
+4. **Crie um novo terminal e instale as dependências do front-end:**
 
     ```
     cd ./catalogo_livros/
     npm i
     ```
 
-4. **Inicie a API e o back-end:**
+5. **Inicie o servidor:**
 
     ```
-    node ./mongo_database.js
-    ```
-
-5. **Inicie o servidor do front-end:**
-
-    ```
-    cd ./catalogo_livros/
     npm run dev
     ```
 
