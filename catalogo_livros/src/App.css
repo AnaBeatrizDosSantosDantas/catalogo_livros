@@ -142,3 +142,10 @@ button {
     /* Margem direita */
     margin-right: 5px;
 }
+
+/* Estilos para botões bloqueados */
+button:disabled {
+    background-color: lightgrey;
+    cursor: not-allowed;
+    color: black; /* Para garantir que o texto fique legível */
+}
