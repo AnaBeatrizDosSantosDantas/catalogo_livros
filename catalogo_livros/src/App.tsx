@@ -102,76 +102,75 @@ function App() {
 
     /* Renderização do componente */
     return (
-            <div className="App">
-                <h1>Catálogo de livros</h1>
-                <div className="App-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Titulo</th>
-                                <th>Autor</th>
-                                <th>ISBN</th>
-                                <th>Páginas</th>
-                                <th>Ano</th>
-                                <th>Valor</th>
+        <div className="App">
+            <h1>Catálogo de livros</h1>
+            <div className="App-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Autor</th>
+                            <th>ISBN</th>
+                            <th>Páginas</th>
+                            <th>Ano</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {/* Mapeamento da lista de livros */}
+                        {livros.map((livro: Livro) => (
+                            <tr key={livro._id}>
+                                <td>{livro.titulo}</td>
+                                <td>{livro.autor}</td>
+                                <td>{livro.isbn}</td>
+                                <td>{livro.paginas}</td>
+                                <td>{livro.ano}</td>
+                                <td>R$ {livro.valor}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {/* Mapeamento da lista de livros */}
-                            {livros.map((livro: Livro) => (
-                                <tr key={livro._id}>
-                                    <td>{livro.titulo}</td>
-                                    <td>{livro.autor}</td>
-                                    <td>{livro.isbn}</td>
-                                    <td>{livro.paginas}</td>
-                                    <td>{livro.ano}</td>
-                                    <td>R$ {livro.valor}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-                {/* Paginação */}
-                <div className="App-pagination">
-                    {pageTotal > 0 && (
-                        <div>
-                            Exibindo de {(page - 1) * 10 + 1} até{" "}
-                            {page * 10 > amount ? amount : page * 10} de{" "}
-                            {amount} livros
-                        </div>
-                    )}
-                    {/* Botões de navegação */}
-                    <button
-                        className="test"
-                        disabled={page <= 1}
-                        onClick={() => setPage(1)}
-                    >
-                        {"<<"}
-                    </button>
-                    <button
-                        className="test"
-                        disabled={page <= 1}
-                        onClick={() => setPage(page - 1)}
-                    >
-                        {"<"}
-                    </button>
-                    {renderPageNumbers()}
-                    <button
-                        className="test"
-                        disabled={page >= pageTotal}
-                        onClick={() => setPage(page + 1)}
-                    >
-                        {">"}
-                    </button>
-                    <button
-                        className="test"
-                        disabled={page >= pageTotal}
-                        onClick={() => setPage(pageTotal)}
-                    >
-                        {">>"}
-                    </button>
-                </div>
+                        ))}
+                    </tbody>
+                </table>
             </div>
+            {/* Paginação */}
+            <div className="App-pagination">
+                {pageTotal > 0 && (
+                    <div>
+                        Exibindo de {(page - 1) * 10 + 1} até{" "}
+                        {page * 10 > amount ? amount : page * 10} de {amount} livros
+                    </div>
+                )}
+                {/* Botões de navegação */}
+                <button
+                    className="test"
+                    disabled={page <= 1}
+                    onClick={() => setPage(1)}
+                >
+                    {"<<"}
+                </button>
+                <button
+                    className="test"
+                    disabled={page <= 1}
+                    onClick={() => setPage(page - 1)}
+                >
+                    {"<"}
+                </button>
+                {renderPageNumbers()}
+                <button
+                    className="test"
+                    disabled={page >= pageTotal}
+                    onClick={() => setPage(page + 1)}
+                >
+                    {">"}
+                </button>
+                <button
+                    className="test"
+                    disabled={page >= pageTotal}
+                    onClick={() => setPage(pageTotal)}
+                >
+                    {">>"}
+                </button>
+            </div>
+        </div>
     );
 }
 
