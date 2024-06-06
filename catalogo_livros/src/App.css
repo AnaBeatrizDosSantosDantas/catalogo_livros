@@ -13,6 +13,8 @@
     width: 100%;
 }
 
+/* App.css */
+
 /* Estilos para o elemento h1 */
 h1 {
     /* Cor do texto */
@@ -148,4 +150,9 @@ button:disabled {
     background-color: lightgrey;
     cursor: not-allowed;
     color: black; /* Para garantir que o texto fique legível */
+}
+
+.page-button.active {
+    background-color: #fda2e2;
+    color: black;
 }

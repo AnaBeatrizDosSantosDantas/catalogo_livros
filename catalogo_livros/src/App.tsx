@@ -79,25 +79,23 @@ function App() {
 
     /* Função para renderizar os números de página */
     function renderPageNumbers() {
-        const totalPagesToShow = Math.min(pageTotal, 7);
-        const pageNumbers = [];
-        const startPage = Math.max(1, page - Math.floor(totalPagesToShow / 2));
-        const endPage = Math.min(pageTotal, startPage + totalPagesToShow - 1);
+        const pages = [];
+        const startPage = Math.max(1, page - 3);
+        const endPage = Math.min(pageTotal, page + 3);
 
         for (let i = startPage; i <= endPage; i++) {
-            pageNumbers.push(
-                /* Botão para cada número de página */
+            pages.push(
                 <button
                     key={i}
+                    className={`page-button ${i === page ? 'active' : ''}`}
                     onClick={() => handlePage(i)}
-                    style={{ backgroundColor: i === page ? "#fda2e2" : "" }}
                 >
                     {i}
                 </button>
             );
         }
 
-        return pageNumbers;
+        return pages;
     }
 
     /* Renderização do componente */
@@ -139,7 +137,6 @@ function App() {
                         {page * 10 > amount ? amount : page * 10} de {amount} livros
                     </div>
                 )}
-                {/* Botões de navegação */}
                 <button
                     className="test"
                     disabled={page <= 1}
