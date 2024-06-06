@@ -1,0 +1,158 @@
+/* Definição de estilos básicos para o documento inteiro */
+:root {
+    /* Define uma imagem de fundo com cobertura total */
+    background-image: url(https://cdn.pixabay.com/photo/2016/10/26/10/05/book-1771073_960_720.jpg);
+    /* Define o tamanho da imagem de fundo */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /* Centraliza os itens horizontal e verticalmente */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* App.css */
+
+/* Estilos para o elemento h1 */
+h1 {
+    /* Cor do texto */
+    color: #fda2e2;
+    /* Tamanho da fonte */
+    font-size: 50px;
+    /* Sombra do texto para efeito de destaque */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+/* Estilos para a classe .App */
+.App {
+    /* Posicionamento relativo */
+    position: relative;
+    /* Margens */
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    /* Cor de fundo transparente */
+    background-color: transparent;
+    /* Borda arredondada */
+    border-radius: 8px;
+    /* Preenchimento interno */
+    padding: 20px;
+    /* Centraliza os itens horizontal e verticalmente */
+    justify-content: center;
+    align-items: center;
+    /* Alinhamento do texto */
+    text-align: center;
+    /* Oculta o conteúdo que transborda */
+    overflow: hidden;
+}
+
+/* Pseudoclasse ::before para adicionar um fundo semitransparente */
+.App::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Cor de fundo branca */
+    background-color: white;
+    /* Borda arredondada */
+    border-radius: 10px;
+    /* Opacidade */
+    opacity: 0.7;
+    /* Z-index para posicionar atrás dos outros elementos */
+    z-index: -1;
+}
+
+/* Estilos para a classe .App-table */
+.App-table {
+    /* Tamanho da fonte */
+    font-size: 20px;
+    /* Exibição como grid */
+    display: grid;
+    /* Centraliza os itens horizontal e verticalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para a classe .App-pagination */
+.App-pagination {
+    /* Preenchimento superior */
+    padding-top: 25px;
+}
+
+/* Estilos para elementos de tabela */
+table {
+    /* Largura total */
+    width: 100%;
+}
+
+/* Estilos para células de tabela */
+th,
+td {
+    /* Preenchimento */
+    padding: 5px;
+    padding-right: 40px;
+    padding-left: 40px;
+    /* Borda inferior */
+    border-bottom: 1px solid #d3d3d3;
+}
+
+/* Estilos para cabeçalhos de tabela */
+th {
+    /* Cor de fundo branca */
+    background-color: white;
+    /* Cor do texto */
+    color: #fda2e2;
+    /* Sombra do texto para efeito de destaque */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+    /* Borda */
+    border: 1px solid black;
+}
+
+/* Estilos para botões */
+button {
+    /* Margem superior */
+    margin-top: 5px;
+    /* Borda arredondada */
+    border-radius: 8px;
+    /* Borda transparente */
+    border: 1px solid transparent;
+    /* Preenchimento */
+    padding: 0.6em 1rem;
+    /* Tamanho da fonte */
+    font-size: 1rem;
+    /* Peso da fonte */
+    font-weight: 400;
+    /* Família da fonte */
+    font-family: inherit;
+    /* Cor de fundo branca */
+    background-color: white;
+    /* Cursor */
+    cursor: pointer;
+    /* Cor do texto */
+    color: black;
+    /* Transições suaves */
+    transition: background-color 0.25s, border-color 0.25s;
+    /* Borda */
+    border: 1px solid black;
+    /* Margem direita */
+    margin-right: 5px;
+}
+
+/* Estilos para botões bloqueados */
+button:disabled {
+    background-color: lightgrey;
+    cursor: not-allowed;
+    color: black; /* Para garantir que o texto fique legível */
+}
+
+.page-button.active {
+    background-color: #fda2e2;
+    color: black;
+}
